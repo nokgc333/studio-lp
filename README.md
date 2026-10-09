@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# studio-lp
 
-## Getting Started
+型チェック、単体テスト、E2Eテスト、CI/CDを備えた、モダンなTypeScript構成のLP。
 
-First, run the development server:
+【目的】
+
+- **技術検証**:
+
+型チェック、単体テスト、E2Eテスト、CI/CDを組み合わせ、品質を自動で検証できる開発環境を整える。
+
+## 技術スタック
+
+| 分野           | 使用ツール                  |
+| -------------- | --------------------------- |
+| フレームワーク | Next.js (App Router), React |
+| 言語           | TypeScript                  |
+| スタイリング   | Tailwind CSS v4             |
+| 単体テスト     | Vitest, Testing Library     |
+| CI/CD          | GitHub Actions, Vercel      |
+| 品質管理       | ESLint, Prettier            |
+
+## セットアップ
+
+必要なもの: Node.js 24, npm
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+起動後、<http://localhost:3000>を開く。
+3000番が使用中の場合は、別ポートが自動で選ばれる。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## スクリプト一覧
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| コマンド                | 内容                                                 |
+| ----------------------- | ---------------------------------------------------- |
+| `npm run dev`           | 開発サーバーを起動                                   |
+| `npm run build`         | 本番用ビルドを作成                                   |
+| `npm run start`         | 本番用ビルドを起動                                   |
+| `npm run check`         | lint、型チェック、整形確認、単体テストをまとめて実行 |
+| `npm run lint`          | ESLintを実行                                         |
+| `npm run typecheck`     | ルートの型を生成し、TypeScriptの型チェックを実行     |
+| `npm run format`        | Prettierで全ファイルを整形                           |
+| `npm run format:check`  | ファイルを変更せず、整形済みかを確認                 |
+| `npm run test`          | 単体テストを1回実行                                  |
+| `npm run test:watch`    | 単体テストを監視モードで実行                         |
+| `npm run test:coverage` | 単体テストをカバレッジ付きで実行                     |
 
-## Learn More
+## 環境変数
 
-To learn more about Next.js, take a look at the following resources:
+現時点で必須のものはない。
+必要とする機能を追加するとき（問い合わせフォームなど）に随時記載。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 注意事項
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 文言と画像は仮のもので、今後変更予定。
+- CIでは、lint、型チェック、整形確認、単体テスト、ビルドを実行する。
