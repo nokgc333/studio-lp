@@ -33,6 +33,15 @@ describe("RootLayout", () => {
     expect(body).toContain("<p>content</p>");
   });
 
+  it("renders the footer after the page content", () => {
+    const body =
+      renderLayout().match(/<body[^>]*>([\s\S]*)<\/body>/)?.[1] ?? "";
+
+    expect(body.indexOf("<footer")).toBeGreaterThan(
+      body.indexOf("<p>content</p>"),
+    );
+  });
+
   it("gives every page a title and a description", () => {
     expect(metadata.title).toBeTruthy();
     expect(metadata.description).toBeTruthy();
