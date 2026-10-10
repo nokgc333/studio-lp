@@ -4,12 +4,17 @@ import { describe, expect, it } from "vitest";
 import Home from "./page";
 
 describe("Home", () => {
-  it("renders exactly one level-1 heading with text", () => {
+  it("renders exactly one level-1 heading", () => {
     render(<Home />);
 
     const headings = screen.getAllByRole("heading", { level: 1 });
 
     expect(headings).toHaveLength(1);
-    expect(headings[0]).not.toBeEmptyDOMElement();
+  });
+
+  it("starts with the key visual section", () => {
+    const { container } = render(<Home />);
+
+    expect(container.querySelector("main > section#hero")).toBeInTheDocument();
   });
 });

@@ -1,7 +1,9 @@
+import { HeroSection } from "@/components/home/hero-section";
+
 export default function Home() {
   return (
     <main>
-      <h1>studio-lp</h1>
+      <HeroSection />
     </main>
   );
 }
