@@ -31,11 +31,9 @@ export function HeroSection() {
               <Image
                 src="/images/placeholder/hero-catch.svg"
                 alt={HERO_CATCH_ALT}
-                width={748}
-                height={119}
+                fill
                 priority
                 unoptimized
-                className="absolute h-full w-full"
               />
             </div>
             <p className="mt-6 w-full text-left text-[1.5rem] leading-[1.44791667] font-medium tracking-[0.1em] text-paper [text-shadow:0_0_8px_rgba(2,0,102,0.6)] le575:mt-4 le575:text-[1.125rem] le575:tracking-[inherit]">
