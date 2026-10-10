@@ -44,6 +44,14 @@ describe("Home", () => {
     ).toBeInTheDocument();
   });
 
+  it("follows the lineup with the feature section", () => {
+    const { container } = render(<Home />);
+
+    expect(
+      container.querySelector("section#lineup + section#feature"),
+    ).toBeInTheDocument();
+  });
+
   it("starts with the key visual section", () => {
     const { container } = render(<Home />);
 
