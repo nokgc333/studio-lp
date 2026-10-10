@@ -12,6 +12,14 @@ describe("Home", () => {
     expect(headings).toHaveLength(1);
   });
 
+  it("follows the key visual with the concept section", () => {
+    const { container } = render(<Home />);
+
+    expect(
+      container.querySelector("section#hero + section#concept"),
+    ).toBeInTheDocument();
+  });
+
   it("starts with the key visual section", () => {
     const { container } = render(<Home />);
 
