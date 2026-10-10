@@ -24,6 +24,9 @@ describe("design tokens", () => {
     ["secondary", "#b3d6e0"],
     ["highlight", "#dc24b1"],
     ["placeholder", "#cdcdcd"],
+    ["surface", "#f5f5f5"],
+    ["switch-off", "#d9d9d9"],
+    ["switch-on", "#ff0000"],
   ])("defines the %s colour as %s", (name, value) => {
     expect(css).toContain(`--color-${name}: ${value};`);
   });
@@ -51,6 +54,18 @@ describe("screen-width variants", () => {
 
     expect(order).toEqual([...order].sort((a, b) => a - b));
     expect(order.every((index) => index >= 0)).toBe(true);
+  });
+});
+
+describe("animations", () => {
+  it("slides a background strip sideways, at two speeds", () => {
+    expect(css).toContain(
+      "--animate-strip-slide: strip-slide 23s linear infinite;",
+    );
+    expect(css).toContain(
+      "--animate-strip-slide-slow: strip-slide 40s linear infinite;",
+    );
+    expect(css).toMatch(/@keyframes strip-slide\s*\{[^}]*background-position/);
   });
 });
 

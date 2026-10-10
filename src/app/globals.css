@@ -8,6 +8,22 @@
   --color-secondary: #b3d6e0;
   --color-highlight: #dc24b1;
   --color-placeholder: #cdcdcd;
+  --color-surface: #f5f5f5;
+  --color-switch-off: #d9d9d9;
+  --color-switch-on: #ff0000;
+
+  /* A background strip drifting sideways (`animate-strip-slide`, `-slow` for small screens). */
+  --animate-strip-slide: strip-slide 23s linear infinite;
+  --animate-strip-slide-slow: strip-slide 40s linear infinite;
+
+  @keyframes strip-slide {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -1605px 0;
+    }
+  }
 }
 
 /* `inline`: the web font variables are set on <html> by next/font at runtime. */
