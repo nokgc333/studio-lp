@@ -16,6 +16,23 @@
   --animate-strip-slide: strip-slide 23s linear infinite;
   --animate-strip-slide-slow: strip-slide 40s linear infinite;
 
+  /*
+   * A circle opening from a point (`animate-circle-in`). The element sets its own
+   * --cx, --cy (the centre) and --cr (the final radius).
+   */
+  --animate-circle-in: circle-in 1s forwards;
+
+  @keyframes circle-in {
+    0% {
+      opacity: 0;
+      clip-path: circle(0 at var(--cx) var(--cy));
+    }
+    100% {
+      opacity: 1;
+      clip-path: circle(var(--cr) at var(--cx) var(--cy));
+    }
+  }
+
   @keyframes strip-slide {
     from {
       background-position: 0 0;

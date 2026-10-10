@@ -65,6 +65,16 @@ describe("gradients", () => {
   });
 });
 
+describe("circle reveal", () => {
+  it("opens a circle from a point, using the variables of the element", () => {
+    expect(css).toContain("--animate-circle-in: circle-in 1s forwards;");
+    expect(css).toMatch(
+      /@keyframes circle-in\s*\{[\s\S]*?circle\(0 at var\(--cx\) var\(--cy\)\)/,
+    );
+    expect(css).toMatch(/circle\(var\(--cr\) at var\(--cx\) var\(--cy\)\)/);
+  });
+});
+
 describe("animations", () => {
   it("slides a background strip sideways, at two speeds", () => {
     expect(css).toContain(
