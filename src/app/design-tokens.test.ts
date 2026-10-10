@@ -57,6 +57,14 @@ describe("screen-width variants", () => {
   });
 });
 
+describe("gradients", () => {
+  it("offers the diagonal brand gradient as a utility", () => {
+    expect(css).toMatch(
+      /@utility bg-brand-diagonal\s*\{[^}]*linear-gradient\(\s*125\.88deg/,
+    );
+  });
+});
+
 describe("animations", () => {
   it("slides a background strip sideways, at two speeds", () => {
     expect(css).toContain(

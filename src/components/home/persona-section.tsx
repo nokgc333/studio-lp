@@ -10,6 +10,7 @@ import {
   PERSONA_ITEMS,
   PERSONA_TITLE,
 } from "./persona-content";
+import { SectionTitle } from "./section-title";
 
 const STRIP_CLASS =
   "relative h-[103px] w-full bg-[url(/images/placeholder/persona-strip.svg)] bg-[length:auto_100%] bg-repeat-x p-0 motion-safe:animate-strip-slide le768:h-[53px] le768:motion-safe:animate-strip-slide-slow";
@@ -37,9 +38,9 @@ export function PersonaSection() {
     >
       <div data-strip aria-hidden="true" className={STRIP_CLASS} />
       <Container>
-        <h2 className="absolute top-[120px] right-0 left-0 text-center text-[32px] leading-[1.448125] font-bold tracking-[0.1em] le768:top-[60px] le768:text-[22px] le768:leading-[1.448181818]">
+        <SectionTitle className="absolute top-[120px] right-0 left-0 le768:top-[60px]">
           {PERSONA_TITLE}
-        </h2>
+        </SectionTitle>
         <div
           data-contents
           className="mt-[60px] flex rounded-2xl shadow-[0_0_30px_0_rgba(0,0,0,0.102)] le768:mt-[27px] le768:flex-col-reverse"

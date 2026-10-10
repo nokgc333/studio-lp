@@ -41,6 +41,16 @@
 @custom-variant le575 (@media (width <= 575px));
 @custom-variant le375 (@media (width <= 375px));
 
+/* The diagonal gradient of the brand colours (tags, panels). */
+@utility bg-brand-diagonal {
+  background-image: linear-gradient(
+    125.88deg,
+    var(--color-primary) -1.47%,
+    var(--color-secondary) 50.9%,
+    var(--color-highlight) 100.83%
+  );
+}
+
 @layer base {
   @media (prefers-reduced-motion: no-preference) {
     html {

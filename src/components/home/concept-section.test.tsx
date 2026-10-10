@@ -127,7 +127,7 @@ describe("ConceptSection", () => {
         section.querySelector(`#${product.id}`) as HTMLElement,
       ).getByText(product.buttons[0]);
 
-      expect(tag.className).toContain("linear-gradient");
+      expect(tag.className).toMatch(/bg-brand-diagonal|linear-gradient/);
     }
   });
 });

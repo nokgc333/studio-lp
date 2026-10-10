@@ -35,8 +35,7 @@ const TAG_CLASS =
   "inline-flex h-[60px] w-[18.75rem] min-w-[240px] items-center justify-center rounded-[10px] text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] leading-[1.8] font-bold text-paper [text-shadow:0_1px_6px_rgba(0,0,0,0.4)] le768:mt-5 le768:h-[50px] le768:w-full";
 
 const TAG_COLOUR_CLASS: Record<ConceptVariant, string> = {
-  mixed:
-    "bg-[linear-gradient(125.88deg,var(--color-primary)_-1.47%,var(--color-secondary)_50.9%,var(--color-highlight)_100.83%)]",
+  mixed: "bg-brand-diagonal",
   green: "bg-[linear-gradient(90deg,#03b10f_0%,#3cffb9_27.69%,#e7f91b_56.55%)]",
   hot: "bg-[linear-gradient(90deg,#b00202_0%,#ff8a00_29.18%,#e83a54_58.97%)]",
 };
