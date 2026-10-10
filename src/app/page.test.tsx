@@ -36,6 +36,14 @@ describe("Home", () => {
     ).toBeInTheDocument();
   });
 
+  it("follows the effect with the lineup section", () => {
+    const { container } = render(<Home />);
+
+    expect(
+      container.querySelector("section#effect + section#lineup"),
+    ).toBeInTheDocument();
+  });
+
   it("starts with the key visual section", () => {
     const { container } = render(<Home />);
 

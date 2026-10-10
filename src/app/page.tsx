@@ -1,6 +1,7 @@
 import { ConceptSection } from "@/components/home/concept-section";
 import { EffectSection } from "@/components/home/effect-section";
 import { HeroSection } from "@/components/home/hero-section";
+import { LineupSection } from "@/components/home/lineup-section";
 import { PersonaSection } from "@/components/home/persona-section";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <ConceptSection />
       <PersonaSection />
       <EffectSection />
+      <LineupSection />
     </main>
   );
 }
