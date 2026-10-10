@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colours are named by role, not by appearance. */
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-primary: #128fcd;
+  --color-secondary: #b3d6e0;
+  --color-highlight: #dc24b1;
+  --color-placeholder: #cdcdcd;
+}
+
+/* `inline`: the web font variables are set on <html> by next/font at runtime. */
+@theme inline {
+  --font-body: var(--font-noto-sans-jp), sans-serif;
+  --font-display: var(--font-orbitron), sans-serif;
+}
+
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--color-ink);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Headings keep the browser's default look unless a section styles them. */
+  h1,
+  h2,
+  h3 {
+    line-height: calc(1em + 0.5rem);
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 1.17em;
+    font-weight: 700;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  button {
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 6px rgb(0 0 0 / 0.4);
+    cursor: pointer;
+  }
+
+  input::placeholder {
+    color: var(--color-placeholder);
+  }
+
+  :focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
