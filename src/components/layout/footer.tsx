@@ -40,7 +40,7 @@ export function Footer() {
       <Container>
         <div className="mx-auto w-[42.5%] min-w-[335px]">
           <Image
-            src="/images/placeholder/footer-logo.svg"
+            src="/images/placeholder/logo.svg"
             alt=""
             width={425}
             height={30}

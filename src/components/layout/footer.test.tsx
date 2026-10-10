@@ -18,7 +18,7 @@ describe("Footer", () => {
     const logo = renderFooter().querySelector("img");
 
     expect(logo).toHaveAttribute("alt", "");
-    expect(logo?.getAttribute("src")).toContain("footer-logo");
+    expect(logo?.getAttribute("src")).toContain("/images/placeholder/logo.svg");
   });
 
   it("lists the social links first and the page links second", () => {
