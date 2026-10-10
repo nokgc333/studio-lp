@@ -34,6 +34,26 @@ describe("design tokens", () => {
   });
 });
 
+describe("screen-width variants", () => {
+  it.each([991, 768, 575, 375])(
+    "defines le%i for widths up to and including that width",
+    (width) => {
+      expect(css).toContain(
+        `@custom-variant le${width} (@media (width <= ${width}px));`,
+      );
+    },
+  );
+
+  it("lists the wider limits first, so the narrower one wins where both apply", () => {
+    const order = [991, 768, 575, 375].map((width) =>
+      css.indexOf(`@custom-variant le${width} `),
+    );
+
+    expect(order).toEqual([...order].sort((a, b) => a - b));
+    expect(order.every((index) => index >= 0)).toBe(true);
+  });
+});
+
 describe("base styles", () => {
   it("sets the text rhythm of the body", () => {
     const body = ruleBody("body");

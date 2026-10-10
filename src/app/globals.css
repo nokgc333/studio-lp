@@ -16,6 +16,15 @@
   --font-display: var(--font-orbitron), sans-serif;
 }
 
+/*
+ * "Up to and including" screen-width limits, as in the design (Tailwind's own
+ * `max-*` is "below"). Widest first: where several apply, the narrower one wins.
+ */
+@custom-variant le991 (@media (width <= 991px));
+@custom-variant le768 (@media (width <= 768px));
+@custom-variant le575 (@media (width <= 575px));
+@custom-variant le375 (@media (width <= 375px));
+
 @layer base {
   @media (prefers-reduced-motion: no-preference) {
     html {
