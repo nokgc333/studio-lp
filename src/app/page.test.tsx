@@ -28,6 +28,14 @@ describe("Home", () => {
     ).toBeInTheDocument();
   });
 
+  it("follows the persona with the effect section", () => {
+    const { container } = render(<Home />);
+
+    expect(
+      container.querySelector("section#persona + section#effect"),
+    ).toBeInTheDocument();
+  });
+
   it("starts with the key visual section", () => {
     const { container } = render(<Home />);
 
